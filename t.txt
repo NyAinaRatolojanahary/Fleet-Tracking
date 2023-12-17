@@ -1,0 +1,131 @@
+public class Personne {
+
+    private String nom;
+    private String prenom;
+    private Date dateNaissance;
+    private String contact;
+
+    public String getNom(){ return this.nom;}
+
+    public String getPrenom(){ return this.prenom;}
+
+    public Date getDateNaissance(){ return this.dateNaissance;}
+
+    public String getContact(){ return this.contact;}
+
+    public void setNom(String nom) throws Exception{
+        if(!nom.isEmpty() || nom.length()<30 ){ this.nom = nom;}
+        else{ throw new Exception("Nom invalide");}
+    }
+
+    public void setPrenom(String prenom) throws Exception{
+        if(!prenom.isEmpty() || prenom.length()<30){ this.prenom = prenom;}
+        else{ throw new Exception("Prenom invalide");}
+    }
+
+    public void setDateNaissance(Date dtn){ this.dateNaissance = dtn;}
+
+    public void setDateNaissance(String dtn) throws Exception{
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate dateSaisie = LocalDate.parse(dtn, formatter);
+        LocalDate aujourdHui = LocalDate.now(); // Get current date
+
+        if (dateSaisie.isBefore(aujourdHui)) {
+            this.dateNaissance = Date.valueOf(dateSaisie);
+        } else {
+            System.out.println("La date de naissance doit être antérieure à aujourd'hui.");
+        }
+    }
+
+    public void setContact(String contact) throws Exception{
+        if(!contact.isEmpty() || contact.length()<30){ this.contact = contact;}
+        else{ throw new Exception("Contact invalide");}
+    }
+
+    public Personne(){}
+
+    public Personne(String name,String fname,Date bday,String contact){
+        this.nom = name;
+        this.prenom = fname;
+        this.dateNaissance = bday;
+        this.contact = contact;
+    }
+
+    
+
+
+
+}
+
+
+
+
+
+
+======================================================================================================
+
+
+
+
+public class Vehicule {
+    
+    private int idvehicule;
+    private String marque;
+    private String type;
+    private double puissance;
+    private String matricule;
+
+
+    public int getIdvehicule() {
+        return idvehicule;
+    }
+    public void setIdvehicule(int idvehicule) {
+        this.idvehicule = idvehicule;
+    }
+    public String getMarque() {
+        return marque;
+    }
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public double getPuissance() {
+        return puissance;
+    }
+    public void setPuissance(double puissance) {
+        this.puissance = puissance;
+    }
+    public String getMatricule() {
+        return matricule;
+    }
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+    
+    public Vehicule() {}
+
+    public Vehicule(String marque, String type, double puissance, String matricule) {
+        this.marque = marque;
+        this.type = type;
+        this.puissance = puissance;
+        this.matricule = matricule;
+    }
+
+    
+    public Vehicule(int idvehicule, String marque, String type, double puissance, String matricule) {
+        this.idvehicule = idvehicule;
+        this.marque = marque;
+        this.type = type;
+        this.puissance = puissance;
+        this.matricule = matricule;
+    }
+
+    
+    
+
+}
