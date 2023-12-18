@@ -1,4 +1,4 @@
-package com.application.Vehicule;
+package com.application.fleettracking.Vehicule;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController
-@RequestMapping(path = "myApp")
 public class VehiculeController {
 
     private final VehiculeService vehiculeService;
@@ -17,7 +16,7 @@ public class VehiculeController {
         this.vehiculeService = vehiculeService;
     }
     
-    @GetMapping(value = "/vehicules")
+    @GetMapping(path = "/vehicules")
     public ArrayList<Vehicule> getAllVehicule(){
         return vehiculeService.getAllVehicule();
     }

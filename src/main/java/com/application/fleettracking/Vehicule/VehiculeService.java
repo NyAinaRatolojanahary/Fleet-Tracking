@@ -1,4 +1,4 @@
-package com.application.Vehicule;
+package com.application.fleettracking.Vehicule;
 
 import java.util.ArrayList;
 
