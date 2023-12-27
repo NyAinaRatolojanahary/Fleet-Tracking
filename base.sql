@@ -14,7 +14,7 @@ create table personne(
     dateNaissance date,
     contact varchar(12),
     idRole int,
-    foreign key idRole references roles(idRole)
+    foreign key (idRole) references roles(idRole)
 );
 
 create table vehicule(
